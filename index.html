@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--CSS-->
+  <link rel="stylesheet" type="text/css" href="static/css/index.css">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+
+  <script src="https://kit.fontawesome.com/3756c8d92c.js" crossorigin="anonymous"></script>
+
+  <!--Title-->
+  <title> doridori </title>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth'
+      });
+      calendar.render();
+    });
+
+  </script>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="title">
+      <h1> DORIDORI </h1>
+      <a> YEEUN's project </a>
+    </div>
+
+    <div class="container-2">
+      <div class="chat">
+        <div class="chat-name">
+          <span> CHAT </span>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+        <div id="chat-container">
+          <div class="chat-content">
+          </div>
+          <div class="chat-send" id="user-input">
+            <input type="text" placeholder="message...">
+            <i class="fa-solid fa-paper-plane"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="to-do">
+        <div class="todo-calendar">
+
+          <!-- full calendar -->
+          <div id='calendar'></div>
+
+        </div>
+
+        <div class="todo-list">
+
+          <div class="todo-list-title">
+            <h1 id="currentDate"></h1>
+            <p id="currentDay"></p>
+            <p id="currentTime"></p>
+          </div>
+
+          <div class="todo_inner">
+
+            <div class="control">
+
+              <div class="count_wrapper">
+                <p class="count_text total"> 오늘의 할 일 :
+                  <span class="count">0</span>개
+                </p>
+                <p class="count_text chk"> 완료한 할 일 :
+                  <span class="count">0</span>개
+                </p>
+              </div>
+
+              <form id="form_todo" class="form_group">
+                <input type="text" class="todo_input" autofocus required />
+                <button class="btn todo_add">추가</button>
+              </form>
+
+            </div>
+
+            <div class="todo_list_wrapper">
+
+              <div class="todo_selete_group">
+                <label class="all_checked">
+                  <input type="checkbox" name="checkboxAll" class="checkbox_all" id="checkboxAll" disabled />
+                  모두 선택 / 해제
+                </label>
+                <button class="btn all_delete" disabled> 선택한 할 일 삭제 </button>
+              </div>
+
+              <div class="todo_list">
+                <ul class="todo"></ul>
+                <div class="todo_empty">나의 체크리스트를 추가해주세요.</div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="static/javascripts/index.js"></script>
+  <script src="static/javascripts/chat.js"></script>
+  <script src="static/javascripts/date.js"></script>
+  <script src="static/javascripts/wheater.js"></script>
+
+</body>
+
+</html>
